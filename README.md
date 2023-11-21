@@ -9,7 +9,9 @@ Using lagnuages like:
 
 There are also some bash file that I created for testing.
 
-Until this update (November 21, 2023) I have only solved easy solution
+## Updates
+
+11/21/2023 Update 1: Solved only easy solution to this point. Trying to reach 1st place in CSU.
 
 ## Ranking
 
