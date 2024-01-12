@@ -13,7 +13,9 @@ There are also some bash file that I created for testing.
 
 11/21/2023 Update 1: Solved only easy solution to this point.
 
-12/27/2023 Update 2: Added a couple problems
+12/27/2023 Update 2: Added a couple problems.
+
+01/12/2024 Update 3: Added a couple problems.
 
 ## Ranking
 
@@ -25,14 +27,20 @@ Update 1: 48.8 points
 
 Update 2: 54.8 points
 
+Update 3: 61.0 points
+
 **Bolivia:**
 
 Update 1 - Rank: 39
 
 Update 2 - Rank: 36
 
+Update 3 - Rank: 31
+
 **Cleveland State University:**
 
 Update 1 - Rank: 3rd
 
 Update 2 - Rank: 3rd
+
+Update 3 - Rank: 2nd
