@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main() {
   istringstream iss(phrase);
 
   string flag;
-  while(iss >> flag) {
+  while (iss >> flag) {
     continue;
   }
 
