@@ -17,6 +17,8 @@ There are also some bash file that I created for testing.
 
 01/12/2024 Update 3: Added a couple problems.
 
+07/13/2024 Update 4: Added problems + weekly acm problems.
+
 ## Ranking
 
 I will update the ranking every time I remember about it.
@@ -29,6 +31,8 @@ Update 2: 54.8 points
 
 Update 3: 61.0 points
 
+Update 4: 78.6 points
+
 **Bolivia:**
 
 Update 1 - Rank: 39
@@ -37,6 +41,8 @@ Update 2 - Rank: 36
 
 Update 3 - Rank: 31
 
+Update 4 - Rank: 21
+
 **Cleveland State University:**
 
 Update 1 - Rank: 3rd
@@ -44,3 +50,5 @@ Update 1 - Rank: 3rd
 Update 2 - Rank: 3rd
 
 Update 3 - Rank: 2nd
+
+Update 4 - Rank: 1st
