@@ -19,6 +19,8 @@ There are also some bash file that I created for testing.
 
 07/13/2024 Update 4: Added problems + weekly acm problems.
 
+07/27/2024 Update 5: Trying to get CSU in top 10
+
 ## Ranking
 
 I will update the ranking every time I remember about it.
@@ -33,6 +35,8 @@ Update 3: 61.0 points
 
 Update 4: 78.6 points
 
+Update 5: 107.8 points
+
 **Bolivia:**
 
 Update 1 - Rank: 39
@@ -43,6 +47,8 @@ Update 3 - Rank: 31
 
 Update 4 - Rank: 21
 
+Update 5 - Rank: 14
+
 **Cleveland State University:**
 
 Update 1 - Rank: 3rd
@@ -52,3 +58,9 @@ Update 2 - Rank: 3rd
 Update 3 - Rank: 2nd
 
 Update 4 - Rank: 1st
+
+Update 5 - Rank: 1st
+
+**(New) Global ranking:**
+
+Update 5 - Rank: 11960
