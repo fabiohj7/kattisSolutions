@@ -6,69 +6,81 @@ def main():
     n = r * c
 
     ans = 0
-    for i in range((1 << n) - 1):
-        i += 1
+    for i in range(1, 1 << n):
+        # for i in range(1, 1880):
         binary = f'{i:b}'.zfill(n)
-        matrix = [binary[j:j + c] for j in range(0, r * c, c)]
-        # print()
-        # for item in matrix:
-        #     print(item)
+        matrix = [binary[j:j + r] for j in range(0, r * c, r)]
 
         ones = []
         ceros = []
-        for x in range(r):
-            for y in range(c):
+        for x in range(c):
+            for y in range(r):
                 if matrix[x][y] == '1':
                     ones.append((x, y))
                 else:
                     ceros.append((x, y))
+
         connected = check_around(ones, matrix, r, c)
-        # print("Connected: ", connected)
-        # print("Ones: ", ones)
-        hole = False
         if len(connected) == len(ones):
+            hole = False
             if ceros:
-                hole = True
                 hole = check_holes(ceros, matrix, r, c)
-                if hole:
-                    continue
-            ans += 1
+            if not hole:
+                # for item in matrix:
+                #     print(f"\033[92m{item}\033[0m")
+                # print("Plus 1")
+                ans += 1
+            else:
+                # print()
+                # for item in matrix:
+                #     print(f"\033[91m{item}\033[0m")
+                pass
 
     print(ans)
 
 
 def check_holes(ceros, matrix, r, c):
-    to_explore = deque([ceros[0]])
-    explored = [ceros[0]]
+    to_explore = []
+    for items in ceros:
+        x, y = items
+        if 0 < x < c and 0 < y < r:
+            to_explore = deque([items])
+    explored = set()
     directions = [(1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, -1),
                   (1, -1)]
-    while to_explore:
-        x, y = to_explore.popleft()
-        if 0 < x < r - 1 and 0 < y < c - 1:
-            for dx, dy in directions:
-                nx, ny = x + dx, y + dy
-                if (0 >= nx >= r - 1
-                        or 0 >= ny >= c - 1) and matrix[nx][ny] == '0':
-                    explored.append((nx, ny))
-                    to_explore.append((nx, ny))
-                    return False
 
-
-def check_around(ones, matrix, r, c):
-
-    to_explore = deque([ones[0]])
-    explored = [ones[0]]
-    directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
     while to_explore:
         x, y = to_explore.popleft()
         for dx, dy in directions:
             nx, ny = x + dx, y + dy
-            if 0 <= nx < r and 0 <= ny < c and (
+            if 0 <= nx < c and 0 <= ny < r:
+                if matrix[nx][ny] == '0' and (nx, ny) not in explored:
+                    explored.add((nx, ny))
+                    to_explore.append((nx, ny))
+
+    # Check if touches border
+    for x, y in explored:
+        if x == 0 or x == c - 1 or y == 0 or y == r - 1 and not explored:
+            return False
+
+    return True
+
+
+def check_around(ones, matrix, r, c):
+    to_explore = deque([ones[0]])
+    explored = set([ones[0]])
+    directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+
+    while to_explore:
+        x, y = to_explore.popleft()
+        for dx, dy in directions:
+            nx, ny = x + dx, y + dy
+            if 0 <= nx < c and 0 <= ny < r and (
                     nx, ny) not in explored and matrix[nx][ny] == '1':
-                explored.append((nx, ny))
+                explored.add((nx, ny))
                 to_explore.append((nx, ny))
 
-    return explored
+    return list(explored)
 
 
 if __name__ == "__main__":
