@@ -26,6 +26,7 @@ def main():
             if ceros:
                 hole = check_holes(ceros, matrix, r, c)
             if not hole:
+                # print()
                 # for item in matrix:
                 #     print(f"\033[92m{item}\033[0m")
                 # print("Plus 1")
@@ -41,11 +42,17 @@ def main():
 
 def check_holes(ceros, matrix, r, c):
     to_explore = []
+    center = False
     for items in ceros:
         x, y = items
-        if 0 < x < c and 0 < y < r:
+        if 0 < x < c - 1 and 0 < y < r - 1:
             to_explore = deque([items])
-    explored = set()
+            explored = set()
+            center = True
+            break
+        to_explore = deque([ceros[0]])
+        explored = set([ceros[0]])
+
     directions = [(1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, -1),
                   (1, -1)]
 
@@ -60,10 +67,11 @@ def check_holes(ceros, matrix, r, c):
 
     # Check if touches border
     for x, y in explored:
-        if x == 0 or x == c - 1 or y == 0 or y == r - 1 and not explored:
+        if (x == 0 or x == c - 1 or y == 0 or y == r - 1):
             return False
 
-    return True
+    if 0 < x < c - 1 and 0 < y < r - 1 and center:
+        return True
 
 
 def check_around(ones, matrix, r, c):
