@@ -2,18 +2,14 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
   int k, n;
   int x, sum = 0;
-
 
   cin >> k;
   cin >> n;
 
-
-  for(int i = 0; i < n; i++)
-  {
+  for (int i = 0; i < n; i++) {
     cin >> x;
     sum += x;
   }
@@ -23,5 +19,4 @@ int main()
   int ans = k - sum;
 
   cout << ans << endl;
-
 }
